@@ -17,7 +17,6 @@
 1. Запускаем контейнеры из файла docker-compose.yml командой в терминале IntelliJ IDEA:
 
 ```
-
 docker-compose up
 ```
 
