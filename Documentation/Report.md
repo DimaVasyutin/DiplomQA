@@ -18,14 +18,14 @@
 
 #### При подключении к СУБД MySQL
 
-![image](https://prnt.sc/dtrUs47oeCcN)
+![image](https://github.com/DimaVasyutin/DiplomQA/assets/115107603/ae08e568-fa3a-45b1-a162-c4e78569dd10)
 
 * 47 - успешных, что составляет 61.84% 
 * 29 - не прошло, что составляет 38.16%
 
 #### При подключении к СУБД PostgreSQL
 
-![image](https://prnt.sc/1YHi7QHJY_Cd)
+![image](https://github.com/DimaVasyutin/DiplomQA/assets/115107603/f54f59d8-de4d-4853-94b9-373ccf2debd5)
 
 * 47 - успешных, что составляет 61.84% 
 * 29 - не прошло, что составляет 38.16%
