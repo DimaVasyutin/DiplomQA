@@ -18,17 +18,18 @@
 
 #### При подключении к СУБД MySQL
 
-![image](https://github.com/DimaVasyutin/DiplomQA/assets/115107603/ae08e568-fa3a-45b1-a162-c4e78569dd10)
+![image](https://github.com/DimaVasyutin/DiplomQA/assets/115107603/96831b02-39e4-41cc-9996-a9dcd35f8e05)
 
-* 47 - успешных, что составляет 61.84% 
-* 29 - не прошло, что составляет 38.16%
+
+* 48 - успешных, что составляет 63.15% 
+* 28 - не прошло, что составляет 36,85
 
 #### При подключении к СУБД PostgreSQL
 
-![image](https://github.com/DimaVasyutin/DiplomQA/assets/115107603/f54f59d8-de4d-4853-94b9-373ccf2debd5)
+![image](https://github.com/DimaVasyutin/DiplomQA/assets/115107603/a7ba8bd8-853d-46c9-8a8c-f726d7631fc9)
 
-* 47 - успешных, что составляет 61.84% 
-* 29 - не прошло, что составляет 38.16%
+* 48 - успешных, что составляет 63.15% 
+* 28 - не прошло, что составляет 36,85
 
 ### Общие рекомендации
 
