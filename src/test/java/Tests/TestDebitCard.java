@@ -28,7 +28,7 @@ public class TestDebitCard {
         mainPage.fillForm(infoApproveCard.getNumberCard(), infoApproveCard.getMonth(), infoApproveCard.getYear(), infoApproveCard.getOwner(), infoApproveCard.getCvccvv());
         mainPage.waitSuccessedNotification();
         var expected = DataHelper.getApprovedCardInfo().getStatus();
-        var actual = SqlHelper.getCreditPaymentStatus();
+        var actual = SqlHelper.getDebitPaymentStatus();
         assertEquals(expected, actual);
     }
 
