@@ -1,9 +1,8 @@
-package Data;
+package data;
 import lombok.Value;
 
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
-import java.time.format.FormatStyle;
 import java.util.Locale;
 import java.util.Random;
 import com.github.javafaker.Faker;
@@ -29,13 +28,13 @@ public class DataHelper {
 
 
     public static CardInfo getApprovedCardInfo() {
-        date.plusMonths(fakerEn.number().numberBetween(12,50));
-        return new CardInfo("4444444444444441", date.format(DateTimeFormatter.ofPattern("MM")), date.format(DateTimeFormatter.ofPattern("yy")), fakerEn.name().fullName(), String.valueOf(fakerEn.number().numberBetween(100, 999)),"APPROVED");
+        var shiftedDate = date.plusMonths(fakerEn.number().numberBetween(12,50));
+        return new CardInfo("4444444444444441", shiftedDate.format(DateTimeFormatter.ofPattern("MM")), shiftedDate.format(DateTimeFormatter.ofPattern("yy")), fakerEn.name().fullName(), String.valueOf(fakerEn.number().numberBetween(100, 999)),"APPROVED");
     }
 
     public static CardInfo getDeclinedCardInfo() {
-        date.plusMonths(fakerEn.number().numberBetween(12,50));
-        return new CardInfo("4444444444444442", date.format(DateTimeFormatter.ofPattern("MM")), date.format(DateTimeFormatter.ofPattern("yy")), fakerEn.name().fullName(), String.valueOf(fakerEn.number().numberBetween(100, 999)), "DECLINED");
+        var shiftedDate = date.plusMonths(fakerEn.number().numberBetween(12,50));
+        return new CardInfo("4444444444444442", shiftedDate.format(DateTimeFormatter.ofPattern("MM")), shiftedDate.format(DateTimeFormatter.ofPattern("yy")), fakerEn.name().fullName(), String.valueOf(fakerEn.number().numberBetween(100, 999)), "DECLINED");
     }
 
     public static String getRandomCardNumber() {
@@ -62,8 +61,8 @@ public class DataHelper {
     }
 
     public static String getMonthFromPast() {
-        date.plusMonths(-1);//проблема с 01 месяцем
-        return date.format(DateTimeFormatter.ofPattern("MM"));
+        var shiftedDate = date.plusMonths(-1);//проблема с 01 месяцем
+        return shiftedDate.format(DateTimeFormatter.ofPattern("MM"));
     }
     public static String getMonthOverTwelve() {
         return String.valueOf(fakerEn.number().numberBetween(13,99)) ;
@@ -77,7 +76,11 @@ public class DataHelper {
     }
 
     public static String getYearFromPast() {
-        date.plusMonths(fakerEn.number().numberBetween(-99,-13));
+        var shiftedDate = date.plusMonths(fakerEn.number().numberBetween(-99,-13));
+        return shiftedDate.format(DateTimeFormatter.ofPattern("yy"));
+    }
+
+    public static String getThisYear() {
         return date.format(DateTimeFormatter.ofPattern("yy"));
     }
 

@@ -1,8 +1,8 @@
-package Tests;
+package tests;
 
-import Data.DataHelper;
-import Data.SqlHelper;
-import Pages.DashboardPage;
+import data.DataHelper;
+import data.SqlHelper;
+import pages.DashboardPage;
 import com.codeborne.selenide.Configuration;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -108,8 +108,8 @@ public class TestDebitCard {
     void shouldFillMonthFromPast() {
         var infoApproveCard = DataHelper.getApprovedCardInfo();
         mainPage.PaymentFormDebit();
-        mainPage.fillForm(infoApproveCard.getNumberCard(), DataHelper.getMonthFromPast(), infoApproveCard.getYear(), infoApproveCard.getOwner(), infoApproveCard.getCvccvv());
-        mainPage.waitErorrMassageMonthsWrongFormat();
+        mainPage.fillForm(infoApproveCard.getNumberCard(), DataHelper.getMonthFromPast(), DataHelper.getThisYear(), infoApproveCard.getOwner(), infoApproveCard.getCvccvv());
+        mainPage.waitErorrMassageWrongTermMonths();
     }
 
     @Test
@@ -117,7 +117,7 @@ public class TestDebitCard {
         var infoApproveCard = DataHelper.getApprovedCardInfo();
         mainPage.PaymentFormDebit();
         mainPage.fillForm(infoApproveCard.getNumberCard(), DataHelper.getMonthOverTwelve(), infoApproveCard.getYear(), infoApproveCard.getOwner(), infoApproveCard.getCvccvv());
-        mainPage.waitErorrMassageMonthsWrongFormat();
+        mainPage.waitErorrMassageWrongTermMonths();
     }
 
     @Test

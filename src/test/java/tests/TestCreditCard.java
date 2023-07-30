@@ -1,12 +1,12 @@
-package Tests;
+package tests;
 
-import Data.DataHelper;
-import Pages.DashboardPage;
+import data.DataHelper;
+import pages.DashboardPage;
 import com.codeborne.selenide.Configuration;
 import com.codeborne.selenide.logevents.SelenideLogger;
 import io.qameta.allure.selenide.AllureSelenide;
 import org.junit.jupiter.api.*;
-import Data.SqlHelper;
+import data.SqlHelper;
 
 import static com.codeborne.selenide.Selenide.open;
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -121,8 +121,8 @@ public class TestCreditCard {
     void shouldFillMonthFromPast() {
         var infoApproveCard = DataHelper.getApprovedCardInfo();
         mainPage.PaymentFormCredit();
-        mainPage.fillForm(infoApproveCard.getNumberCard(), DataHelper.getMonthFromPast(), infoApproveCard.getYear(), infoApproveCard.getOwner(), infoApproveCard.getCvccvv());
-        mainPage.waitErorrMassageMonthsWrongFormat();
+        mainPage.fillForm(infoApproveCard.getNumberCard(), DataHelper.getMonthFromPast(), DataHelper.getThisYear(), infoApproveCard.getOwner(), infoApproveCard.getCvccvv());
+        mainPage.waitErorrMassageWrongTermMonths();
     }
 
     @Test
@@ -130,7 +130,7 @@ public class TestCreditCard {
         var infoApproveCard = DataHelper.getApprovedCardInfo();
         mainPage.PaymentFormCredit();
         mainPage.fillForm(infoApproveCard.getNumberCard(), DataHelper.getMonthOverTwelve(), infoApproveCard.getYear(), infoApproveCard.getOwner(), infoApproveCard.getCvccvv());
-        mainPage.waitErorrMassageMonthsWrongFormat();
+        mainPage.waitErorrMassageWrongTermMonths();
     }
 
     @Test

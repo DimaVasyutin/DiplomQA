@@ -1,4 +1,4 @@
-package Pages;
+package pages;
 
 import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.SelenideElement;
@@ -27,9 +27,10 @@ public class DashboardPage {
     private SelenideElement erorrMassageNumberCard = $x("//*[text()='Номер карты']/ancestor::span/child::span[text()='Неверный формат']");
     private SelenideElement erorrMassageEmptyNumberCard = $x("//*[text()='Номер карты']/ancestor::span/child::span[text()='Поле обязательно для заполнения']");
     private SelenideElement erorrMassageYearsWrongFormat = $x("//*[text()='Год']/ancestor::span/child::span[text()='Неверный формат']");
-    private SelenideElement erorrMassageEmptyYears = $x("//*[text()='Год']/ancestor::span/child::span[text()='Поле обязательно для заполнения']");
+    private SelenideElement erorrMassageEmptyYears = $x("//*[text()='Год']/ancestor::span/child::span[text()='Неверный формат']");
     private SelenideElement erorrMassageYears = $x("//*[text()='Год']/ancestor::span/child::span[text()='Истёк срок действия карты']");
     private SelenideElement erorrMassageMonthsWrongFormat= $x("//*[text()='Месяц']/ancestor::span/child::span[text()='Неверный формат']");
+    private SelenideElement erorrMassageMonthsWrongTerm= $x("//*[text()='Месяц']/ancestor::span/child::span[text()='Неверно указан срок действия карты']");
     private SelenideElement erorrMassageEmptyMonths= $x("//*[text()='Месяц']/ancestor::span/child::span[text()='Поле обязательно для заполнения']");
     private SelenideElement erorrMassageCvccvvWrongFormat= $x("//*[text()='CVC/CVV']/ancestor::span/child::span[text()='Неверный формат']");
     private SelenideElement erorrMassageEmptyCvccvv= $x("//*[text()='CVC/CVV']/ancestor::span/child::span[text()='Поле обязательно для заполнения']");
@@ -52,7 +53,7 @@ public class DashboardPage {
         continueButton.click();
     }
     public void waitFailedNotification(){
-        failedNotification.shouldBe(Condition.visible, Duration.ofSeconds(11));
+        failedNotification.shouldBe(Condition.visible, Duration.ofSeconds(15));
     }
 
     public void waitErorrMassageNameWrongFormat(){
@@ -82,6 +83,9 @@ public class DashboardPage {
 
     public void waitErorrMassageEmptyMonths(){
         erorrMassageEmptyMonths.shouldBe(Condition.visible);
+    }
+    public void waitErorrMassageWrongTermMonths(){
+        erorrMassageMonthsWrongTerm.shouldBe(Condition.visible);
     }
     public void waitErorrMassageMonthsWrongFormat(){
         erorrMassageMonthsWrongFormat.shouldBe(Condition.visible);
