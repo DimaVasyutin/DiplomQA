@@ -53,7 +53,7 @@ public class DataHelper {
         return fakerRu.number().digits(15);
     }
     public static String getSpecSymbol() {
-        String symbols = "!@#&*/^%";
+        var symbols = "!@#&*/^%";
         return String.valueOf(symbols.charAt(random.nextInt(symbols.length())));
     }
     public static String getSpaceBar(){      //наверно лучше бы через .sendKeys

@@ -31,18 +31,18 @@ public class SqlHelper {
     @SneakyThrows
     public static String getDebitPaymentStatus() {
         QueryRunner runner = new QueryRunner();
-        String sqlStatus = "SELECT status FROM payment_entity ORDER BY created DESC LIMIT 1";
+        var sqlStatus = "SELECT status FROM payment_entity ORDER BY created DESC LIMIT 1";
         var connection = getConnection();
-            String result = runner.query(connection, sqlStatus, new ScalarHandler<>());
-            return result;
+            var result = runner.query(connection, sqlStatus, new ScalarHandler<>());
+            return result.toString();
     }
 
     @SneakyThrows
     public static String getCreditPaymentStatus() {
         QueryRunner runner = new QueryRunner();
-        String sqlStatus = "SELECT status FROM credit_request_entity ORDER BY created DESC LIMIT 1";
+        var sqlStatus = "SELECT status FROM credit_request_entity ORDER BY created DESC LIMIT 1";
         var connection = getConnection();
-            String result = runner.query(connection, sqlStatus, new ScalarHandler<>());
-            return result;
+            var result = runner.query(connection, sqlStatus, new ScalarHandler<>());
+            return result.toString();
     }
 }

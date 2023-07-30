@@ -8,6 +8,7 @@ import java.time.Duration;
 import static com.codeborne.selenide.Selenide.$x;
 
 public class DashboardPage {
+
     private SelenideElement buyButton = $x("//*[@class='button__content']//*[text()='Купить']");
     private SelenideElement buyButtonInCredit = $x("//*[@class='button__content']//*[text()='Купить в кредит']");
 
